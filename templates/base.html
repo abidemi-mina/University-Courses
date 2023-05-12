@@ -1,0 +1,298 @@
+{% load static %}
+<!Doctype html>
+<html class="no-js" lang="en">
+
+
+<!-- Mirrored from raistheme.com/html/gostudy/gostudy/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 03 Mar 2022 18:24:16 GMT -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    
+    <title>{% block title %}{% endblock %}</title>
+    <meta name="robots" content="noindex, follow" />
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'assets/images/favicon.png' %}">
+
+    <!-- CSS
+	============================================ -->
+
+    <!-- Icon Font CSS -->
+    <link rel="stylesheet" href="{% static 'assets/css/plugins/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/plugins/flaticon.css' %}">
+
+    <!-- Plugins CSS -->
+    <link rel="stylesheet" href="{% static 'assets/css/plugins/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/plugins/swiper-bundle.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/plugins/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/plugins/aos.css' %}">
+
+    <!-- Main Style CSS -->
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+
+
+    <!--====== Use the minified version files listed below for better performance and remove the files listed above ======-->
+    <!-- <link rel="stylesheet" href="{% static 'assets/css/vendor/plugins.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/style.min.css' %}"> -->
+
+</head>
+
+<body>
+
+    <div class="main-wrapper">
+
+
+        <!-- Preloader start -->
+        <div class="preloader">
+            <div class="loader">
+                <div class="ytp-spinner">
+                    <div class="ytp-spinner-container">
+                        <div class="ytp-spinner-rotator">
+                            <div class="ytp-spinner-left">
+                                <div class="ytp-spinner-circle"></div>
+                            </div>
+                            <div class="ytp-spinner-right">
+                                <div class="ytp-spinner-circle"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Preloader End -->
+
+        <!-- Header Start  -->
+        <div id="header" class="header section">
+            <div class="container">
+
+                <!-- Header Wrapper Start  -->
+                <div class="header-wrapper">
+
+                    <!-- Header Logo Start -->
+                    <div class="header-logo">
+                        <a href="{% url 'home' %}"><h1>CANVAK</h1></a>
+                    </div>
+                    <!-- Header Logo End -->
+
+                    <!-- Header Right Start -->
+                    <div class="header-right">
+
+                        <!-- Header Menu Start -->
+                        <div class="header-menu d-none d-lg-block">
+                            <ul class="main-menu">
+                                <li class="active-menu">
+                                    <a href="{% url 'home' %}">Home</a>
+                                </li>
+                                <li><a href="#">Faculties</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="{% url 'faculty' %}">Faculty of Arts</a></li>
+                                        <li><a href="{% url 'faculty' %}">Faculty of Arts</a></li>
+                                        <li><a href="{% url 'faculty' %}">Faculty of Arts</a></li>
+                                        <li><a href="{% url 'faculty' %}">Faculty of Arts</a></li>
+                                       
+                                    </ul>
+                                </li>
+                                <li><a href="{% url 'course' %}">Courses</a></li>
+                                <li><a href="{% url 'team' %}">Our Team</a></li>
+                            </ul>
+                        </div>
+                        <!-- Header Menu End -->
+
+                        <!-- Header Meta Start -->
+                        <div class="header-meta">
+
+                            <!-- Header Search Start -->
+                            <div class="header-search d-none d-lg-block">
+                                <a class="search-btn" href="#"><i class="flaticon-loupe"></i></a>
+                                <div class="header-search-content">
+                                    <form action="#" method="get">
+                                        <input type="text" placeholder="Search...">
+                                        <button class="close-search" type="submit"><i class="flaticon-loupe"></i></button>
+                                    </form>
+                                </div>
+                            </div>
+                           
+                        </div>
+                        <!-- Header Meta End -->
+
+                        <div class="header-toggle d-lg-none">
+                            <button data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Header Right End -->
+                </div>
+                <!-- Header Wrapper End -->
+
+            </div>
+        </div>
+        <!-- Header End -->
+
+        <!-- Offcanvas Start -->
+        <div class="offcanvas offcanvas-start" id="offcanvasMenu">
+
+            <div class="offcanvas-header">
+                <!-- Offcanvas Logo Start -->
+                <div class="offcanvas-logo">
+                    <a href="#"><h1>CANVAK</h1></a>
+                </div>
+                <!-- Offcanvas Logo End -->
+                <button class="btn-close" data-bs-dismiss="offcanvas"></button>
+            </div>
+
+            <div class="offcanvas-body">
+                <div class="offcanvas-menu">
+                    <ul class="main-menu">
+                        <li class="active-menu">
+                            <a href="{% url 'home' %}">Home</a>
+                        </li>
+                        <li><a href="#">Faculty</a>
+                            <ul class="sub-menu">
+                                <li><a href="{% url 'faculty' %}">Faculty of Arts</a></li>
+                                <li><a href="{% url 'faculty' %}">Faculty of Arts</a></li>
+                                <li><a href="{% url 'faculty' %}">Faculty of Arts</a></li>
+                                <li><a href="{% url 'faculty' %}">Faculty of Arts</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="{% url 'course' %}">Courses</a></li>
+                        <li><a href="{% url 'team' %}">Our Team</a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        <!-- Offcanvas End -->
+        {% block body %}
+        {% endblock %}
+          <!-- Footer Start -->
+          <div class="footer-section section">
+            <div class="container">
+
+                <!-- Footer Widget Wrapper Start -->
+                <div class="footer-widget-wrapper">
+                    <div class="row">
+                        <div class="col-lg-5 col-sm-6">
+                            <!-- Footer Widget Start -->
+                            <div class="footer-widget widget-about">
+                                <a class="footer-logo" href="{% url 'home' %}"><h1 class="footer-logo-title">CANVAK</h1></a>
+
+                                <div class="widget-info">
+                                    <p>We support programs that create advancement opportunities for people.</p>
+
+                                    <ul class="social">
+                                        <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                                        <li><a href="#"><i class="fab fa-github"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- Footer Widget End -->
+                        </div>
+                        <div class="col-lg-3 col-sm-6">
+                            <!-- Footer Widget Start -->
+                            <div class="footer-widget">
+                                <h4 class="footer-widget-title">Useful Links</h4>
+
+                                <div class="widget-link">
+                                    <ul class="link">
+                                    <li><a href="{% url 'home' %}">Home</a></li>
+                                    <li><a href="{% url 'course' %}">Courses</a></li>
+                                    <li><a href="{% url 'team' %}">Our Team</a></li>    
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- Footer Widget End -->
+                        </div>
+                        <div class="col-lg-4 col-sm-6">
+                            <!-- Footer Widget Start -->
+                            <div class="footer-widget">
+                                <h4 class="footer-widget-title">Contact Us</h4>
+
+                                <ul class="widget-info">
+                                    <li>
+                                        <div class="media">
+                                            <i class="flaticon-location-pin"></i>
+                                            <div class="media-body">
+                                                <span>4ookm Afe babalola way</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="media">
+                                            <i class="fas fa-phone-volume"></i>
+                                            <div class="media-body">
+                                                <a href="tel:+2349122105689">+234 9122105689</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="media">
+                                            <i class="flaticon-email"></i>
+                                            <div class="media-body">
+                                                <a href="mailto:aminatabidemi212@gmail.com">aminatabidemi212@gmail.com</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- Footer Widget End -->
+                        </div>
+                    </div>
+                </div>
+                <!-- Footer Widget Wrapper End -->
+
+                <!-- Footer Copyright End -->
+                <div class="footer-copyright">
+                    <div class="copyright-wrapper">
+                        <div class="copyright-design">
+                            <p>Designed & Developed by <a href="https://minaportfolio.pythonanywhere.com/"> Abidemi Aminat</a></p>
+                        </div>
+                        <div class="copyright-text">
+                            <p>&copy; Copyright 2021 CANVAK All rights reserved. </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Footer Copyright End -->
+
+            </div>
+        </div>
+        <!-- Footer End -->
+
+        <!-- Back to Top End -->
+        <button class="back-btn" id="backBtn"><i class="flaticon-left-arrow-1"></i></button>
+        <!-- Back to Top End -->
+
+    </div>
+
+    <!-- JS
+    ============================================ -->
+    <script src="{% static 'assets/js/vendor/jquery-1.12.4.min.js' %}"></script>
+    <script src="{% static 'assets/js/vendor/modernizr-3.11.2.min.js' %}"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="{% static 'assets/js/plugins/popper.min.js' %}"></script>
+    <script src="{% static 'assets/js/plugins/bootstrap.min.js' %}"></script>
+
+    <!-- Plugins JS -->
+    <script src="{% static 'assets/js/plugins/swiper-bundle.min.js' %}"></script>
+    <script src="{% static 'assets/js/plugins/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'assets/js/plugins/imagesloaded.pkgd.min.js' %}"></script>
+    <script src="{% static 'assets/js/plugins/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'assets/js/plugins/aos.js' %}"></script>
+    <script src="{% static 'assets/js/plugins/waypoints.min.js' %}"></script>
+    <script src="{% static 'assets/js/plugins/jquery.counterup.min.js' %}"></script>
+    <script src="{% static 'assets/js/plugins/appear.min.js' %}"></script>
+
+    <!--====== Use the minified version files listed below for better performance and remove the files listed above ======-->
+
+
+    <!-- Main JS -->
+    <script src="{% static 'assets/js/main.js' %}"></script>
+
+</body>
+
+
+</html>

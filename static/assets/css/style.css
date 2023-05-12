@@ -211,8 +211,12 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 
 /*--Section Spacing--*/
 .section-padding {
-  padding-top: 120px;
+  padding-top: 60px;
   padding-bottom: 120px;
+}
+
+.section-title.section-devider{
+  padding-bottom: 20px;
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
@@ -11339,6 +11343,15 @@ select {
   margin-bottom: 13px;
   position: relative;
 }
+.single-course-benefits-wrap .course-list li {
+  font-size: 16px;
+  line-height: 30px;
+  color: #415674;
+  padding-left: 25px;
+  margin-bottom: 13px;
+  position: relative;
+  list-style:decimal;
+}
 
 .single-course-benefits-wrap .course-benefits-list li::before {
   content: "\f132";
@@ -12219,6 +12232,9 @@ select {
 .footer-widget-title {
   font-size: 18px;
   font-weight: 700;
+  color: #ffffff;
+}
+h1.footer-logo-title {
   color: #ffffff;
 }
 

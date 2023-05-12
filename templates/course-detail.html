@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Course detail
+{% endblock %}
+
+ {% block body %}
+<!-- Page Banner Start -->
+        <div class="section course-single-breadcrumb">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <!-- Page Breadcrumb Start -->
+                        <ul class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page"> Course title</li>
+                        </ul>
+                        <!-- Page Breadcrumb End -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Single Course Banner Start -->
+        <div class="section single-course-banner-section" style="background-image: url({% static 'assets/images/bg/banner-2.jpg' %});">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <!-- Single Course Content Start -->
+                        <div class="single-course-banner-content">
+                           
+                            <h3 class="title">Course title</h3>
+                            <p>This tutorial will help you learn quickly and thoroughly. Lorem ipsum is dummy text used in laying out print, graphic or web designs</p>
+                        </div>
+                        <!-- Single Course Content End -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Single Course Banner End -->
+
+        <!-- Single Course Start -->
+        <div class="section single-course-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <!-- Single Course Wrapper Start -->
+                        <div class="single-course-wrapper">
+                            <!-- Single Course Description Start -->
+                            <div class="single-course-description">
+                                <h4 class="title">Description</h4>
+                                <p>This tutorial will help you learn quickly and thoroughly. Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. </p>
+                                <p>You'll be exposed to principles and strategies, but, more importantly, you’ll learn how to actually apply these abstract concepts by coding three different websites for three very different audiences. Lorem ipsum is dummy text used in laying out print, graphic or web designs Lorem ipsum</p>
+                            </div>
+                            <!-- Single Course Description End -->
+                            <!-- Single Course Benefits Start -->
+                            <div class="single-course-benefits-wrap">
+                                <h4 class="title">Jobs related</h4>
+                                <ul class="course-benefits-list">
+                                    <li>Downloadable lectures, code and design assets for all projects</li>
+                                    <li>Downloadable lectures, code and design assets for all projects</li>
+                                    <li>Downloadable lectures, code and design assets for all projects</li>
+                                    <li>Downloadable lectures, code and design assets for all projects</li>
+                                    <li>Downloadable lectures, code and design assets for all projects</li>
+                                    <li>Downloadable lectures, code and design assets for all projects</li>
+                                    <li>Downloadable lectures, code and design assets for all projects</li>
+                                    <li>Downloadable lectures, code and design assets for all projects</li>
+                                    <li>Downloadable lectures, code and design assets for all projects</li>
+                                    <li>Downloadable lectures, code and design assets for all projects</li>
+                                    <li>Downloadable lectures, code and design assets for all projects</li>
+                                    <li>Downloadable lectures, code and design assets for all projects</li>
+                                    <li>Downloadable lectures, code and design assets for all projects</li>
+                                    <li>Downloadable lectures, code and design assets for all projects</li>
+                                    <li>Downloadable lectures, code and design assets for all projects</li>
+                                    <li>Downloadable lectures, code and design assets for all projects</li>
+                                    <li>Downloadable lectures, code and design assets for all projects</li>
+                                    <li>Downloadable lectures, code and design assets for all projects</li>
+                                    <li>Downloadable lectures, code and design assets for all projects</li>
+                                    <li>Downloadable lectures, code and design assets for all projects</li>
+                                    <li>Downloadable lectures, code and design assets for all projects</li>
+                                </ul>
+                            </div>
+                            <!-- Single Course Benefits End -->
+                        </div>
+                        <!-- Single Course Wrapper End -->
+                    </div>
+                    <div class="col-lg-4">
+                        <!-- Single Course Sidebar Start -->
+                        <div class="single-course-sidebar">
+                            <div class="single-course-sidebar-wrapper">
+                                <!-- Sidebar Widget Start -->
+                                
+                            </div>
+                        </div>
+                        <!-- Single Course Sidebar End -->
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- Single Course End -->
+
+       {% endblock %}

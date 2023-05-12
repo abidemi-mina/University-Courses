@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Faculties
+{% endblock %}
+
+ {% block body %}
+
+        <!-- Page Banner Start -->
+        <div class="section page-banner-section" style="background-image: url({% static 'assets/images/bg/banner-img.jpg' %});">
+            <div class="container">
+                <!-- Page Banner Wrapper Start -->
+                <div class="page-banner-wrapper">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <!-- Page Banner Content Start -->
+                            <div class="page-banner text-center">
+                                <h2 class="title">Faculty of Arts</h2>
+                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus ipsam velit omnis? Asperiores esse quis doloremque vero provident dicta cum fugiat rerum, iusto architecto nesciunt, sint modi, ducimus animi consequuntur!</p>
+                            </div>
+                            <!-- Page Banner Content End -->
+                        </div>
+                    </div>
+                </div>
+                <!-- Page Banner Wrapper End -->
+            </div>
+        </div>
+        <!-- Page Banner End -->
+
+        <!-- Courses Start -->
+        <div class="section top-courses-3-section courses-grid-section">
+            <div class="container">
+                <div class="top-courses-wrapper">
+                    <!-- Section Title Start -->
+                    <div class="section-title text-center py-5">
+                        <h2 class="title">Explore  Courses</h2>
+                    </div>
+                    <!-- Section Title End -->
+                    <!-- Courses Wrapper Start -->
+                    <div class="single-course-benefits-wrap">
+                        <div class="row grid course-list">
+                            <li class="col-lg-2 col-sm-6 "><a href="{% url 'course_det' %}">hello world</a></li>
+                            <li class="col-lg-2 col-sm-6 "><a href="{% url 'course_det' %}">hello world</a></li>
+                            <li class="col-lg-2 col-sm-6 "><a href="{% url 'course_det' %}">hello world</a></li>
+                            <li class="col-lg-2 col-sm-6 "><a href="{% url 'course_det' %}">hello world</a></li>
+                            <li class="col-lg-2 col-sm-6 "><a href="{% url 'course_det' %}">hello world</a></li>
+                            <li class="col-lg-2 col-sm-6 "><a href="{% url 'course_det' %}">hello world</a></li>
+                            <li class="col-lg-2 col-sm-6 "><a href="{% url 'course_det' %}">hello world</a></li>
+                            <li class="col-lg-2 col-sm-6 "><a href="{% url 'course_det' %}">hello world</a></li>
+                            <li class="col-lg-2 col-sm-6 "><a href="{% url 'course_det' %}">hello world</a></li>
+                            <li class="col-lg-2 col-sm-6 "><a href="{% url 'course_det' %}">hello world</a></li>
+                            <li class="col-lg-2 col-sm-6 "><a href="{% url 'course_det' %}">hello world</a></li>
+                            <li class="col-lg-2 col-sm-6 "><a href="{% url 'course_det' %}">hello world</a></li>
+                            <li class="col-lg-2 col-sm-6 "><a href="{% url 'course_det' %}">hello world</a></li>
+                            <li class="col-lg-2 col-sm-6 "><a href="{% url 'course_det' %}">hello world</a></li>
+                            <li class="col-lg-2 col-sm-6 "><a href="{% url 'course_det' %}">hello world</a></li>
+                            <li class="col-lg-2 col-sm-6 "><a href="{% url 'course_det' %}">hello world</a></li>
+                            <li class="col-lg-2 col-sm-6 "><a href="{% url 'course_det' %}">hello world</a></li>
+                            
+                          
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- Courses Wrapper End -->
+
+                </div>
+
+            </div>
+        </div>
+        <!-- Courses End -->
+
+      {% endblock %}
