@@ -15,13 +15,11 @@
                         <div class="hero-content-4" data-aos="fade-up" data-aos-delay="400">
                             <h2 class="title">World's most popular <br> <span>Learning platform</span></h2>
                             <p class="text">You can start and finish one of these popular courses in under a day - for free! Check out the list below.. Take the course for free</p>
-                            <div class="hero-form">
-                                <form action="#">
+                            <p>Getting started with eduent is easy</p>
+                                <!-- <form action="#" method="get">
                                     <input type="text" placeholder="What do you want to learn?">
                                     <button class="search" type="submit"><i class="fas fa-search"></i></button>
-                                </form>
-                            </div>
-                            <p>Getting started with eduent is easy</p>
+                                </form> -->
                         </div>
                         <!-- Hero Content End -->
                     </div>
@@ -87,10 +85,10 @@
                                     <!-- Blog Content Start -->
                                     <div class="blog-content">
                                         <div class="blog-author-category">
-                                            <a class="category color-1" href="{% url 'course_det' %}">Faculty of {{f.f_name}}</a>
+                                            <a class="category color-1" href="{{f.get_faculty_url}}">Faculty of {{f.f_name}}</a>
                                         </div>
-                                        <p class="title"><a href="{% url 'course_det' %}">{{f.desc|truncatewords:10}}</a></p>
-                                        <a class="read-more" href="{% url 'course_det' %}">Read More</a>
+                                        <p><a href="{{f.get_faculty_url}}">{{f.desc|truncatewords:10}}</a></p>
+                                        <a class="read-more" href="{{f.get_faculty_url}}">Read More</a>
                                     </div>
                                     <!-- Blog Content End -->
                                 </div>
@@ -128,7 +126,7 @@
                                 <!-- Single Team Start -->
                                 <div class="single-team">
                                     <div class="team-img">
-                                        <a href="#"><img src="{{t.team_img}}" alt="team"></a>
+                                        <a href="#"><img src="{{t.team_img}}" class="img-thumbnail" alt="team"></a>
                                     </div>
                                     <div class="team-content">
                                         <div class="team-name-deg">

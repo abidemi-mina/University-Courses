@@ -11354,6 +11354,12 @@ select {
   white-space: nowrap;
 }
 
+
+div.blog-content{
+  word-break: break-all !important;
+  height: 200px;
+}
+
 .single-course-benefits-wrap .course-benefits-list li::before {
   content: "\f132";
   font-family: "flaticon";

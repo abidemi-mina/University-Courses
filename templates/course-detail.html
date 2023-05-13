@@ -7,6 +7,8 @@
 
  {% block body %}
 <!-- Page Banner Start -->
+{% if course_det %}
+
         <div class="section course-single-breadcrumb">
             <div class="container">
                 <div class="row">
@@ -14,7 +16,7 @@
                         <!-- Page Breadcrumb Start -->
                         <ul class="breadcrumb">
                             <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
-                            <li class="breadcrumb-item active" aria-current="page"> Course title</li>
+                            <li class="breadcrumb-item active" aria-current="page"> {{course_det.name}}</li>
                         </ul>
                         <!-- Page Breadcrumb End -->
                     </div>
@@ -29,8 +31,8 @@
                         <!-- Single Course Content Start -->
                         <div class="single-course-banner-content">
                            
-                            <h3 class="title">Course title</h3>
-                            <p>This tutorial will help you learn quickly and thoroughly. Lorem ipsum is dummy text used in laying out print, graphic or web designs</p>
+                            <h3 class="title">{{course_det.name}}</h3>
+                            <p>{{course_det.desc|truncatewords:7}}</p>
                         </div>
                         <!-- Single Course Content End -->
                     </div>
@@ -49,35 +51,21 @@
                             <!-- Single Course Description Start -->
                             <div class="single-course-description">
                                 <h4 class="title">Description</h4>
-                                <p>This tutorial will help you learn quickly and thoroughly. Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. </p>
-                                <p>You'll be exposed to principles and strategies, but, more importantly, you’ll learn how to actually apply these abstract concepts by coding three different websites for three very different audiences. Lorem ipsum is dummy text used in laying out print, graphic or web designs Lorem ipsum</p>
+                                <p>{{course_det.desc}} </p>
                             </div>
+                            {% endif %}
+
                             <!-- Single Course Description End -->
                             <!-- Single Course Benefits Start -->
                             <div class="single-course-benefits-wrap">
                                 <h4 class="title">Jobs related</h4>
                                 <ul class="course-benefits-list">
-                                    <li>Downloadable lectures, code and design assets for all projects</li>
-                                    <li>Downloadable lectures, code and design assets for all projects</li>
-                                    <li>Downloadable lectures, code and design assets for all projects</li>
-                                    <li>Downloadable lectures, code and design assets for all projects</li>
-                                    <li>Downloadable lectures, code and design assets for all projects</li>
-                                    <li>Downloadable lectures, code and design assets for all projects</li>
-                                    <li>Downloadable lectures, code and design assets for all projects</li>
-                                    <li>Downloadable lectures, code and design assets for all projects</li>
-                                    <li>Downloadable lectures, code and design assets for all projects</li>
-                                    <li>Downloadable lectures, code and design assets for all projects</li>
-                                    <li>Downloadable lectures, code and design assets for all projects</li>
-                                    <li>Downloadable lectures, code and design assets for all projects</li>
-                                    <li>Downloadable lectures, code and design assets for all projects</li>
-                                    <li>Downloadable lectures, code and design assets for all projects</li>
-                                    <li>Downloadable lectures, code and design assets for all projects</li>
-                                    <li>Downloadable lectures, code and design assets for all projects</li>
-                                    <li>Downloadable lectures, code and design assets for all projects</li>
-                                    <li>Downloadable lectures, code and design assets for all projects</li>
-                                    <li>Downloadable lectures, code and design assets for all projects</li>
-                                    <li>Downloadable lectures, code and design assets for all projects</li>
-                                    <li>Downloadable lectures, code and design assets for all projects</li>
+                                    {% if job %}
+                                    {% for j in job %}
+                                    <li>{{j.name}}</li>
+                                    {% endfor %}
+                                    {% endif %}
+                                    
                                 </ul>
                             </div>
                             <!-- Single Course Benefits End -->
@@ -98,6 +86,7 @@
             </div>
 
         </div>
+
         <!-- Single Course End -->
 
        {% endblock %}

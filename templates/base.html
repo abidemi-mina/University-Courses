@@ -88,7 +88,7 @@
                                     <ul class="sub-menu">
                                         {% if fact %}
                                             {% for f in fact %}
-                                        <li><a href="{% url 'faculty' f.id %}">Faculty of {{f.f_name}}</a></li>
+                                        <li><a href="{{f.get_faculty_url}}">Faculty of {{f.f_name}}</a></li>
                                         {% endfor  %}
                                         {% endif %}
                                        
@@ -155,7 +155,7 @@
                             <ul class="sub-menu">
                                 {% if fact %}
                                     {% for f in fact %}
-                                <li><a href="{% url 'faculty' f.id %}">Faculty of {{f.f_name}}</a></li>
+                                <li><a href="{{f.get_faculty_url}}">Faculty of {{f.f_name}}</a></li>
                                 {% endfor  %}
                                 {% endif %}
                             </ul>

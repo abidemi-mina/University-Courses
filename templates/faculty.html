@@ -44,7 +44,7 @@
                         <div class="row grid course-list">
                             {% if course %}
                             {% for f in course %}
-                            <li class="col-lg-2 col-sm-6 "><a href="{% url 'course_det' %}">{{f.name}}</a></li>
+                            <li class="col-lg-2 col-sm-6 "><a href="{{f.get_dept_url}}">{{f.name}}</a></li>
                             {% endfor %}
                             {% endif %}
                             

@@ -9,16 +9,29 @@ admin.site.register(Team)
 
 @admin.register(Department)
 class PostAdmin(admin.ModelAdmin):
+    prepopulated_fields = {'slug': ('name',),'f_slug':('fac',)}
+
     list_display = [
         'name',
         'fac',
-        'job'
+        'job',
+        'desc',
+    ]
+
+@admin.register(Jobs)
+class PostAdmin(admin.ModelAdmin):
+    list_display = [
+        'name',
+        'dept',
+        
     ]
 
 @admin.register(Faculty)
 class PostAdmin(admin.ModelAdmin):
+    prepopulated_fields = {'slug': ('f_name',)}
     
     list_display = [
         'f_name',
         'desc',
+        
     ]

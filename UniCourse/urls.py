@@ -24,8 +24,8 @@ urlpatterns = [
     path('',views.home,name='home'),
     path('team',views.team,name='team'),
     path('Courses',views.course,name='course'),
-    path('faculty/<int:fact_id>',views.faculty,name='faculty'),
-    path('course-detail',views.course_det,name='course_det'),
+    path('faculty/<slug:slug>',views.faculty,name='faculty'),
+    path('course-detail/<slug:slug>',views.course_detail,name='course_det'),
     path('admin/', admin.site.urls),
 ]
 

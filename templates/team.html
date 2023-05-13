@@ -36,96 +36,26 @@
                 <!-- Team Item Wrapper Start -->
                 <div class="team-2-item-wrapper our-team-wrap">
                     <div class="row">
+                        {% if team %}
+                        {% for t in team %}
                         <div class="col-lg-3 col-md-6 col-sm-6">
                             <!-- Single Team Start -->
                             <div class="single-team">
                                 <div class="team-img">
-                                    <a href="#"><img src="{% static 'assets/images/team/team-1.jpg' %}" alt="team"></a>
+                                    <a href="#"><img src="{{t.team_img}}" class="img-thumbnail" alt="team"></a>
                                 </div>
                                 <div class="team-content">
                                     <div class="team-name-deg">
-                                        <h5 class="name"><a href="#">Tomas Bata</a></h5>
-                                        <span class="team-deg">Economy</span>
+                                        <h5 class="name"><a href="#">{{t.name}}</a></h5>
+                                        <span class="team-deg">{{t.dept}}</span>
                                     </div>
-                                    <div class="team-share">
-                                        <span><i class="fas fa-share-alt"></i></span>
-                                    </div>
+                                    
                                 </div>
                             </div>
                             <!-- Single Team End -->
                         </div>
-                        <div class="col-lg-3 col-md-6 col-sm-6">
-                            <!-- Single Team Start -->
-                            <div class="single-team">
-                                <div class="team-img">
-                                    <a href="#"><img src="{% static 'assets/images/team/team-1.jpg' %}" alt="team"></a>
-                                </div>
-                                <div class="team-content">
-                                    <div class="team-name-deg">
-                                        <h5 class="name"><a href="#">Tomas Bata</a></h5>
-                                        <span class="team-deg">Economy</span>
-                                    </div>
-                                    <div class="team-share">
-                                        <span><i class="fas fa-share-alt"></i></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Single Team End -->
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-sm-6">
-                            <!-- Single Team Start -->
-                            <div class="single-team">
-                                <div class="team-img">
-                                    <a href="#"><img src="{% static 'assets/images/team/team-1.jpg' %}" alt="team"></a>
-                                </div>
-                                <div class="team-content">
-                                    <div class="team-name-deg">
-                                        <h5 class="name"><a href="#">Tomas Bata</a></h5>
-                                        <span class="team-deg">Economy</span>
-                                    </div>
-                                    <div class="team-share">
-                                        <span><i class="fas fa-share-alt"></i></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Single Team End -->
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-sm-6">
-                            <!-- Single Team Start -->
-                            <div class="single-team">
-                                <div class="team-img">
-                                    <a href="#"><img src="{% static 'assets/images/team/team-1.jpg' %}" alt="team"></a>
-                                </div>
-                                <div class="team-content">
-                                    <div class="team-name-deg">
-                                        <h5 class="name"><a href="#">Tomas Bata</a></h5>
-                                        <span class="team-deg">Economy</span>
-                                    </div>
-                                    <div class="team-share">
-                                        <span><i class="fas fa-share-alt"></i></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Single Team End -->
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-sm-6">
-                            <!-- Single Team Start -->
-                            <div class="single-team">
-                                <div class="team-img">
-                                    <a href="#"><img src="{% static 'assets/images/team/team-1.jpg' %}" alt="team"></a>
-                                </div>
-                                <div class="team-content">
-                                    <div class="team-name-deg">
-                                        <h5 class="name"><a href="#">Tomas Bata</a></h5>
-                                        <span class="team-deg">Economy</span>
-                                    </div>
-                                    <div class="team-share">
-                                        <span><i class="fas fa-share-alt"></i></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Single Team End -->
-                        </div>
+                        {% endfor  %}
+                        {% endif %} 
                         
                     </div>
                 </div>
