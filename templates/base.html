@@ -86,10 +86,11 @@
                                 </li>
                                 <li><a href="#">Faculties</a>
                                     <ul class="sub-menu">
-                                        <li><a href="{% url 'faculty' %}">Faculty of Arts</a></li>
-                                        <li><a href="{% url 'faculty' %}">Faculty of Arts</a></li>
-                                        <li><a href="{% url 'faculty' %}">Faculty of Arts</a></li>
-                                        <li><a href="{% url 'faculty' %}">Faculty of Arts</a></li>
+                                        {% if fact %}
+                                            {% for f in fact %}
+                                        <li><a href="{% url 'faculty' f.id %}">Faculty of {{f.f_name}}</a></li>
+                                        {% endfor  %}
+                                        {% endif %}
                                        
                                     </ul>
                                 </li>
@@ -152,10 +153,11 @@
                         </li>
                         <li><a href="#">Faculty</a>
                             <ul class="sub-menu">
-                                <li><a href="{% url 'faculty' %}">Faculty of Arts</a></li>
-                                <li><a href="{% url 'faculty' %}">Faculty of Arts</a></li>
-                                <li><a href="{% url 'faculty' %}">Faculty of Arts</a></li>
-                                <li><a href="{% url 'faculty' %}">Faculty of Arts</a></li>
+                                {% if fact %}
+                                    {% for f in fact %}
+                                <li><a href="{% url 'faculty' f.id %}">Faculty of {{f.f_name}}</a></li>
+                                {% endfor  %}
+                                {% endif %}
                             </ul>
                         </li>
                         <li><a href="{% url 'course' %}">Courses</a></li>

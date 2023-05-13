@@ -9,15 +9,9 @@ admin.site.register(Team)
 
 @admin.register(Department)
 class PostAdmin(admin.ModelAdmin):
-    def job(self,obj):
-        if obj.job :
-            data = list(obj.job)
-            for d in data:
-                return d
-
-
     list_display = [
         'name',
+        'fac',
         'job'
     ]
 
@@ -25,6 +19,6 @@ class PostAdmin(admin.ModelAdmin):
 class PostAdmin(admin.ModelAdmin):
     
     list_display = [
-        'name',
+        'f_name',
         'desc',
     ]

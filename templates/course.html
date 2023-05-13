@@ -44,9 +44,15 @@
                         <div class="col-lg-10 col-md-12">
                             <div class="top-courses-filter text-center">
                                 <ul>
-                                    <li class="active" data-filter="*">All <span>8</span></li>
-                                    <li data-filter=".course-faculty">art <span>3</span></li>
-                                    <li data-filter=".name-faculty">sciences <span>3</span></li>
+                                    {% if count %}
+                                    <li class="active" data-filter="*">All <span>{{count}}</span></li>
+                                    {% endif %}
+
+                                    {% if fact %}
+                                    {% for f in fact %}
+                                    <li data-filter=".{{f.f_name}}">{{f.f_name}}</li>
+                                    {% endfor %}
+                                    {% endif %}
                                 </ul>
                             </div>
                         </div>
@@ -55,45 +61,11 @@
                     <!-- Courses Wrapper Start -->
                     <div class="single-course-benefits-wrap">
                         <div class="row grid course-list">
-                            <li class="col-lg-2 col-sm-6 course-faculty"><a href="{% url 'course_det' %}">hello world</a></li>
-                            <li class="col-lg-2 col-sm-6 course-faculty"><a href="{% url 'course_det' %}">hello world</a></li>
-                            <li class="col-lg-2 col-sm-6 course-faculty"><a href="{% url 'course_det' %}">hello world</a></li>
-                            <li class="col-lg-2 col-sm-6 course-faculty"><a href="{% url 'course_det' %}">hello world</a></li>
-                            <li class="col-lg-2 col-sm-6 course-faculty"><a href="{% url 'course_det' %}">hello world</a></li>
-                            <li class="col-lg-2 col-sm-6 name-faculty"><a href="{% url 'course_det' %}">hello world</a></li>
-                            <li class="col-lg-2 col-sm-6 name-faculty"><a href="{% url 'course_det' %}">hello world</a></li>
-                            <li class="col-lg-2 col-sm-6 name-faculty"><a href="{% url 'course_det' %}">hello world</a></li>
-                            <li class="col-lg-2 col-sm-6 name-faculty"><a href="{% url 'course_det' %}">hello world</a></li>
-                            <li class="col-lg-2 col-sm-6 name-faculty"><a href="{% url 'course_det' %}">hello world</a></li>
-                            <li class="col-lg-2 col-sm-6 name-faculty"><a href="{% url 'course_det' %}">hello world</a></li>
-                            <li class="col-lg-2 col-sm-6 name-faculty"><a href="{% url 'course_det' %}">hello world</a></li>
-                            <li class="col-lg-2 col-sm-6 course-faculty"><a href="{% url 'course_det' %}">hello world</a></li>
-                            <li class="col-lg-2 col-sm-6 course-faculty"><a href="{% url 'course_det' %}">hello world</a></li>
-                            <li class="col-lg-2 col-sm-6 course-faculty"><a href="{% url 'course_det' %}">hello world</a></li>
-                            <li class="col-lg-2 col-sm-6 course-faculty"><a href="{% url 'course_det' %}">hello world</a></li>
-                            <li class="col-lg-2 col-sm-6 course-faculty"><a href="{% url 'course_det' %}">hello world</a></li>
-                            <li class="col-lg-2 col-sm-6 course-faculty"><a href="{% url 'course_det' %}">hello world</a></li>
-                            <li class="col-lg-2 col-sm-6 course-faculty"><a href="{% url 'course_det' %}">hello world</a></li>
-                            <li class="col-lg-2 col-sm-6 course-faculty"><a href="{% url 'course_det' %}">hello world</a></li>
-                            <li class="col-lg-2 col-sm-6 course-faculty"><a href="{% url 'course_det' %}">hello world</a></li>
-                            <li class="col-lg-2 col-sm-6 course-faculty"><a href="{% url 'course_det' %}">hello world</a></li>
-                            <li class="col-lg-2 col-sm-6 course-faculty"><a href="{% url 'course_det' %}">hello world</a></li>
-                            <li class="col-lg-2 col-sm-6 course-faculty"><a href="{% url 'course_det' %}">hello world</a></li>
-                            <li class="col-lg-2 col-sm-6 course-faculty"><a href="{% url 'course_det' %}">hello world</a></li>
-                            <li class="col-lg-2 col-sm-6 course-faculty"><a href="{% url 'course_det' %}">hello world</a></li>
-                            <li class="col-lg-2 col-sm-6 course-faculty"><a href="{% url 'course_det' %}">hello world</a></li>
-                            <li class="col-lg-2 col-sm-6 course-faculty"><a href="{% url 'course_det' %}">hello world</a></li>
-                            <li class="col-lg-2 col-sm-6 course-faculty"><a href="{% url 'course_det' %}">hello world</a></li>
-                            <li class="col-lg-2 col-sm-6 course-faculty"><a href="{% url 'course_det' %}">hello world</a></li>
-                            <li class="col-lg-2 col-sm-6 course-faculty"><a href="{% url 'course_det' %}">hello world</a></li>
-                            <li class="col-lg-2 col-sm-6 course-faculty"><a href="{% url 'course_det' %}">hello world</a></li>
-                            <li class="col-lg-2 col-sm-6 course-faculty"><a href="{% url 'course_det' %}">hello world</a></li>
-                            <li class="col-lg-2 col-sm-6 course-faculty"><a href="{% url 'course_det' %}">hello world</a></li>
-                            <li class="col-lg-2 col-sm-6 course-faculty"><a href="{% url 'course_det' %}">hello world</a></li>
-                            <li class="col-lg-2 col-sm-6 course-faculty"><a href="{% url 'course_det' %}">hello world</a></li>
-                            <li class="col-lg-2 col-sm-6 course-faculty"><a href="{% url 'course_det' %}">hello world</a></li>
-                            <li class="col-lg-2 col-sm-6 course-faculty"><a href="{% url 'course_det' %}">hello world</a></li>
-                          
+                            {% if course %}
+                            {% for c in course %}
+                            <li class="col-lg-2 col-sm-6 {{c.fac}} "><a href="{% url 'course_det' %}">{{c.name}}</a></li>
+                            {% endfor %}
+                            {% endif %}
                             </div>
                         </div>
 

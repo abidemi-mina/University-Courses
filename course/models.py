@@ -1,3 +1,4 @@
+from dataclasses import field
 from django.db import models
 # from collectionfield.models import CollectionField
 
@@ -29,7 +30,38 @@ class Team(models.Model):
         verbose_name_plural = ' Team Members'
 
 class Department(models.Model):
+    AGRICULTURE = 'Agricultural Science'
+    ARTS = 'Arts'
+    BIOLOGY = 'Biological Science'
+    MANAGEMENT = 'Management Science'
+    DENSITRY = 'Densitry'
+    EDUCATION = 'Education'
+    ENGNIEERING = 'Engineering'
+    HEANDTECH = 'Health Science and Technology'
+    LAW = 'Law'
+    MEDSCIENCE = 'Medical Science'
+    PHARM = 'Pharmaceutical Science'
+    PHYSCIENCE = 'Physical Science'
+    VETMED = 'Veterinary Medicine'
+    CHOOSE = ''
+    FACULTIES = [
+        ( AGRICULTURE,'Agricultural Science'),
+        (  ARTS , 'Arts'),
+        (  BIOLOGY, 'Biological Science'),
+        (  MANAGEMENT ,'Management Science'),
+        ( DENSITRY, 'Densitry'),
+        ( EDUCATION ,'Education'),
+        ( ENGNIEERING ,'Engineering'),
+        ( HEANDTECH, 'Health Science and Technology'),
+        ( LAW, 'Law'),
+        ( MEDSCIENCE, 'Medical Science'),
+        (  PHARM ,'Pharmaceutical Science'),
+        ( PHYSCIENCE ,'Physical Science'),
+        (  VETMED ,'Veterinary Medicine'),
+        (CHOOSE, 'Choose A Faculty'),
+    ]
     name = models.CharField(max_length=100, null=True,blank=True)
+    fac = models.CharField(max_length=100,choices=FACULTIES, default=CHOOSE,verbose_name='Faculty')
     job = models.TextField(null=True,blank=True)
 
     def __str__(self) :
@@ -40,18 +72,48 @@ class Department(models.Model):
 
 
 class Faculty(models.Model):
-    name = models.CharField(max_length=100,null=True,blank=True)
-    desc = models.TextField(null=True,blank=True)
-    depts = models.ManyToManyField(Department)
+    AGRICULTURE = 'Agricultural Science'
+    ARTS = 'Arts'
+    BIOLOGY = 'Biological Science'
+    MANAGEMENT = 'Management Science'
+    DENSITRY = 'Densitry'
+    EDUCATION = 'Education'
+    ENGNIEERING = 'Engineering'
+    HEANDTECH = 'Health Science and Technology'
+    LAW = 'Law'
+    MEDSCIENCE = 'Medical Science'
+    PHARM = 'Pharmaceutical Science'
+    PHYSCIENCE = 'Physical Science'
+    VETMED = 'Veterinary Medicine'
+    CHOOSE = ''
+    FACULTIES = [
+        ( AGRICULTURE,'Agricultural Science'),
+        (  ARTS , 'Arts'),
+        (  BIOLOGY, 'Biological Science'),
+        (  MANAGEMENT ,'Management Science'),
+        ( DENSITRY, 'Densitry'),
+        ( EDUCATION ,'Education'),
+        ( ENGNIEERING ,'Engineering'),
+        ( HEANDTECH, 'Health Science and Technology'),
+        ( LAW, 'Law'),
+        ( MEDSCIENCE, 'Medical Science'),
+        (  PHARM ,'Pharmaceutical Science'),
+        ( PHYSCIENCE ,'Physical Science'),
+        (  VETMED ,'Veterinary Medicine'),
+        (CHOOSE, 'Choose A Faculty'),
+    ]
+    f_name = models.CharField(max_length=100,choices=FACULTIES, default=CHOOSE,verbose_name='Faculty')
+    desc = models.TextField(null=True,blank=True,verbose_name='Description')
 
 
 
 
     def __str__(self) :
-        if self.name is  None :
+        if self.f_name is  None :
             return ''
         else:
-            return self.name
+            return self.f_name
+
 
     class Meta():
         verbose_name_plural = 'Faculties'

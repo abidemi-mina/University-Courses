@@ -16,12 +16,20 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from course import views
+from django.conf import settings 
+from django.conf.urls.static import static
+
 
 urlpatterns = [
     path('',views.home,name='home'),
     path('team',views.team,name='team'),
     path('Courses',views.course,name='course'),
-    path('faculty',views.faculty,name='faculty'),
+    path('faculty/<int:fact_id>',views.faculty,name='faculty'),
     path('course-detail',views.course_det,name='course_det'),
     path('admin/', admin.site.urls),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+

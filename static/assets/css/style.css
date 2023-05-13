@@ -11351,6 +11351,7 @@ select {
   margin-bottom: 13px;
   position: relative;
   list-style:decimal;
+  white-space: nowrap;
 }
 
 .single-course-benefits-wrap .course-benefits-list li::before {

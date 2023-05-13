@@ -50,8 +50,9 @@
                             <!-- Single Course Description Start -->
                             <div class="single-course-description">
                                 <h2 class="section-title text-center"> ABOUT </h2>
-                                <p>This tutorial will help you learn quickly and thoroughly. Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. </p>
-                                <p>You'll be exposed to principles and strategies, but, more importantly, you'll learn how to actually apply these abstract concepts by coding three different websites for three very different audiences. Lorem ipsum is dummy text used in laying out print, graphic or web designs Lorem ipsum</p>
+                                {% if about %}
+                                <blockquote>{{about.description}}</blockquote>
+                                {% endif %}
                             </div>
                             <!-- Single Course Description End -->
                     
@@ -78,66 +79,25 @@
                     <!-- Blog Wrapper Start -->
                     <div class="blog-content-wrapper">
                         <div class="row">
+                            {% if fact %}
+                            {% for f in fact %}
                             <div class="col-lg-3 col-md-6 col-sm-6">
                                 <!-- Single Blog Start -->
                                 <div class="single-blog">
                                     <!-- Blog Content Start -->
                                     <div class="blog-content">
                                         <div class="blog-author-category">
-                                            <a class="category color-1" href="{% url 'course_det' %}">Faculty of art</a>
+                                            <a class="category color-1" href="{% url 'course_det' %}">Faculty of {{f.f_name}}</a>
                                         </div>
-                                        <p class="title"><a href="{% url 'course_det' %}">Educational technology and mobile learning</a></p>
+                                        <p class="title"><a href="{% url 'course_det' %}">{{f.desc|truncatewords:10}}</a></p>
                                         <a class="read-more" href="{% url 'course_det' %}">Read More</a>
                                     </div>
                                     <!-- Blog Content End -->
                                 </div>
                                 <!-- Single Blog End -->
                             </div>
-                            <div class="col-lg-3 col-md-6 col-sm-6">
-                                <!-- Single Blog Start -->
-                                <div class="single-blog">
-                                    <!-- Blog Content Start -->
-                                    <div class="blog-content">
-                                        <div class="blog-author-category">
-                                            <a class="category color-1" href="{% url 'course_det' %}">Faculty of art</a>
-                                        </div>
-                                        <p class="title"><a href="{% url 'course_det' %}">Educational technology and mobile learning</a></p>
-                                        <a class="read-more" href="{% url 'course_det' %}">Read More</a>
-                                    </div>
-                                    <!-- Blog Content End -->
-                                </div>
-                                <!-- Single Blog End -->
-                            </div>
-                            <div class="col-lg-3 col-md-6 col-sm-6">
-                                <!-- Single Blog Start -->
-                                <div class="single-blog">
-                                    <!-- Blog Content Start -->
-                                    <div class="blog-content">
-                                        <div class="blog-author-category">
-                                            <a class="category color-1" href="{% url 'course_det' %}">Faculty of art</a>
-                                        </div>
-                                        <p class="title"><a href="{% url 'course_det' %}">Educational technology and mobile learning</a></p>
-                                        <a class="read-more" href="{% url 'course_det' %}">Read More</a>
-                                    </div>
-                                    <!-- Blog Content End -->
-                                </div>
-                                <!-- Single Blog End -->
-                            </div>
-                            <div class="col-lg-3 col-md-6 col-sm-6">
-                                <!-- Single Blog Start -->
-                                <div class="single-blog">
-                                    <!-- Blog Content Start -->
-                                    <div class="blog-content">
-                                        <div class="blog-author-category">
-                                            <a class="category color-1" href="{% url 'course_det' %}">Faculty of art</a>
-                                        </div>
-                                        <p class="title"><a href="{% url 'course_det' %}">Educational technology and mobile learning</a></p>
-                                        <a class="read-more" href="{% url 'course_det' %}">Read More</a>
-                                    </div>
-                                    <!-- Blog Content End -->
-                                </div>
-                                <!-- Single Blog End -->
-                            </div>
+                            {% endfor  %}
+                            {% endif %}
                         </div>
                     </div>
                     <!-- Blog Wrapper End -->
@@ -162,70 +122,26 @@
                     <!-- Team Item Wrapper Start -->
                     <div class="team-2-item-wrapper our-team-wrap">
                         <div class="row">
+                            {% if team %}
+                            {% for t in team %}
                             <div class="col-lg-3 col-md-6 col-sm-6">
                                 <!-- Single Team Start -->
                                 <div class="single-team">
                                     <div class="team-img">
-                                        <a href="#"><img src="{% static 'assets/images/team/team-1.jpg' %}" alt="team"></a>
+                                        <a href="#"><img src="{{t.team_img}}" alt="team"></a>
                                     </div>
                                     <div class="team-content">
                                         <div class="team-name-deg">
-                                            <h5 class="name"><a href="#">Tomas Bata</a></h5>
-                                            <span class="team-deg">Economy</span>
+                                            <h5 class="name"><a href="#">{{t.name}}</a></h5>
+                                            <span class="team-deg">{{t.dept}}</span>
                                         </div>
                                         
                                     </div>
                                 </div>
                                 <!-- Single Team End -->
-                            </div>        
-                            <div class="col-lg-3 col-md-6 col-sm-6">
-                                <!-- Single Team Start -->
-                                <div class="single-team">
-                                    <div class="team-img">
-                                        <a href="#"><img src="{% static 'assets/images/team/team-1.jpg' %}" alt="team"></a>
-                                    </div>
-                                    <div class="team-content">
-                                        <div class="team-name-deg">
-                                            <h5 class="name"><a href="#">Tomas Bata</a></h5>
-                                            <span class="team-deg">Economy</span>
-                                        </div>
-                                        
-                                    </div>
-                                </div>
-                                <!-- Single Team End -->
-                            </div>        
-                            <div class="col-lg-3 col-md-6 col-sm-6">
-                                <!-- Single Team Start -->
-                                <div class="single-team">
-                                    <div class="team-img">
-                                        <a href="#"><img src="{% static 'assets/images/team/team-1.jpg' %}" alt="team"></a>
-                                    </div>
-                                    <div class="team-content">
-                                        <div class="team-name-deg">
-                                            <h5 class="name"><a href="#">Tomas Bata</a></h5>
-                                            <span class="team-deg">Economy</span>
-                                        </div>
-                                        
-                                    </div>
-                                </div>
-                                <!-- Single Team End -->
-                            </div>        
-                            <div class="col-lg-3 col-md-6 col-sm-6">
-                                <!-- Single Team Start -->
-                                <div class="single-team">
-                                    <div class="team-img">
-                                        <a href="#"><img src="{% static 'assets/images/team/team-1.jpg' %}" alt="team"></a>
-                                    </div>
-                                    <div class="team-content">
-                                        <div class="team-name-deg">
-                                            <h5 class="name"><a href="#">Tomas Bata</a></h5>
-                                            <span class="team-deg">Economy</span>
-                                        </div>
-                                        
-                                    </div>
-                                </div>
-                                <!-- Single Team End -->
-                            </div>        
+                            </div>  
+                            {% endfor  %}
+                            {% endif %}            
                         </div>
                     </div>
                     <!-- Team Item Wrapper End -->
